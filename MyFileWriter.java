@@ -46,4 +46,37 @@ public class MyFileWriter {
             e.printStackTrace();
         }
     }
+
+    public static void secretMethod() {
+        try {
+            File myFile = new File(".secretFile.txt"); // no folder path
+            if (myFile.createNewFile()) {
+                System.out.println("File created: " + myFile.getAbsolutePath());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(".secretFile.txt"))) {
+            bufferedWriter.write("renrenren");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void makeFileInFolder() {
+        try {
+            File myFile = new File(".secretFolder", ".secretFile.txt");
+            if (myFile.createNewFile()) {
+                System.out.println("File created: " + myFile.getAbsolutePath());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
 }
