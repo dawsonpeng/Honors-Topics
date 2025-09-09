@@ -49,7 +49,7 @@ public class MyFileWriter {
 
     public static void secretMethod() {
         try {
-            File myFile = new File(".secretFile.txt"); // no folder path
+            File myFile = new File("dawson.txt");
             if (myFile.createNewFile()) {
                 System.out.println("File created: " + myFile.getAbsolutePath());
             } else {
@@ -59,8 +59,8 @@ public class MyFileWriter {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
-        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(".secretFile.txt"))) {
-            bufferedWriter.write("renrenren");
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("dawson.txt"))) {
+            bufferedWriter.write("1. i swim\n2. my favorite color is orange\n3.my favorite star wars character is darth maul");
         } catch (IOException e) {
             e.printStackTrace();
         }
