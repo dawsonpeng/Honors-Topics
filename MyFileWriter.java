@@ -79,4 +79,9 @@ public class MyFileWriter {
             e.printStackTrace();
         }
     }
+
+    public static void mkdir(String dirChoose) {
+        File dir = new File(dirChoose);
+        if(dir.exists()) dir.mkdir();
+    }
 }
