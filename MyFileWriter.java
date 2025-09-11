@@ -82,6 +82,6 @@ public class MyFileWriter {
 
     public static void mkdir(String dirChoose) {
         File dir = new File(dirChoose);
-        if(dir.exists()) dir.mkdir();
+        if(!dir.exists()) dir.mkdir();
     }
 }
